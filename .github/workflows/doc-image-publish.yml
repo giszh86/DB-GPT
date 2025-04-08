@@ -58,7 +58,9 @@ jobs:
         with:
           context: .
           file: ./docs/Dockerfile-deploy
-          platforms: linux/amd64
+          platforms: |
+            linux/amd64
+            linux/arm64
           push: false
       
       # Only run when it is not a PR, build and push the image
