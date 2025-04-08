@@ -68,6 +68,8 @@ jobs:
         with:
           context: .
           file: ./docs/Dockerfile-deploy
-          platforms: linux/amd64
+          platforms: |
+            linux/amd64
+            linux/arm64
           push: true
-          tags: eosphorosai/dbgpt-docs:${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref_name }},eosphorosai/dbgpt-docs:latest
+          tags: giszh86/dbgpt-docs:${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref_name }},giszh86/dbgpt-docs:latest
